@@ -44,7 +44,7 @@ class FFNModel(nn.Module):
         return super().load_state_dict(new_state_dict, strict=strict)
 
 
-if __name__ == "__main__":
+def generate():
     torch.set_grad_enabled(False)
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -62,4 +62,9 @@ if __name__ == "__main__":
     output = baseline(x)
 
     print("output: ", output.shape)
+
+
+if __name__ == "__main__":
+    generate()
+
 
